@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Database\Factories;
 
@@ -6,6 +7,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BookFactory extends Factory
 {
+
+    private static int $sequence = 1;
+
     /**
      * Define the model's default state.
      *
@@ -14,8 +18,11 @@ class BookFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->colorName . '本',
-
+            'bookdetail_id' => self::$sequence++,
+            'author_id' => $this->faker->numberBetween(1,50),
+            'publisher_id' => $this->faker->numberBetween(1,50),
+            'created_at' => now(),
+            'updated_at' => now()
         ];
     }
 }
