@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
@@ -11,6 +12,6 @@ class BookDetail extends Model
 
     public function book()
     {
-        return $this->belongsTo('\App\Models\Book');
+        return $this->belongsTo(Book::class);
     }
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
@@ -11,16 +12,16 @@ class Book extends Model
 
     public function detail()
     {
-        return $this->hasOne('\App\Models\BookDetail');
+        return $this->hasOne(BookDetail::class);
     }
 
     public function author()
     {
-        return $this->belongsTo('\App\Models\Authos');
+        return $this->belongsTo(Author::class);
     }
 
     public function publisher()
     {
-        return $this->belongsTo('\App\Models\Publisher');
+        return $this->belongsTo(Publisher::class);
     }
 }

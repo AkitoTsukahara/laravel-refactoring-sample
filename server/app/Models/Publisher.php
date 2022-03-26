@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
@@ -11,6 +12,6 @@ class Publisher extends Model
 
     public function books()
     {
-        return $this->hasMany('\App\Models\Book');
+        return $this->hasMany(Book::class);
     }
 }
