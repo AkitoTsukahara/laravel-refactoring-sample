@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Database\Seeders;
 
@@ -13,6 +14,8 @@ class PublishersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Publisher::factory()
+            ->count(50)
+            ->create();
     }
 }
