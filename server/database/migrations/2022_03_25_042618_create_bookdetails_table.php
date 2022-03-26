@@ -13,10 +13,10 @@ class CreateBookdetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookdetails', function (Blueprint $table) {
+        Schema::create('book_details', function (Blueprint $table) {
             $table->id();
-            $table->string('name', '100');
             $table->integer('book_id');
+            $table->string('name', '100');
             $table->string('isbn', '100');
             $table->date('published_date');
             $table->integer('price');
@@ -31,6 +31,6 @@ class CreateBookdetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookdetails');
+        Schema::dropIfExists('book_details');
     }
 }
